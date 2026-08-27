@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calopsita Pura em CSS</title>
+  <style>
+    /* Configuração da página */
+    body {
+      background: #eef2f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Caixa principal do passarinho */
+    .calopsita {
+      position: relative;
+      width: 200px;
+      height: 250px;
+      cursor: pointer;
+    }
+
+    /* Crista Amarela (Anima com o Mouse) */
+    .crista {
+      position: absolute;
+      top: -30px;
+      left: 75px;
+      width: 25px;
+      height: 60px;
+      background: #FFDE4D;
+      border-radius: 100% 0% 0% 0%;
+      transform: rotate(-15px);
+      transform-origin: bottom center;
+      transition: transform 0.4s ease;
+      z-index: 1;
+    }
+
+    /* Cabeça */
+    .cabeca {
+      position: absolute;
+      top: 15px;
+      left: 45px;
+      width: 110px;
+      height: 110px;
+      background: #FFDE4D;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    /* Olhos com animação de piscar */
+    .olho {
+      position: absolute;
+      top: 35px;
+      width: 14px;
+      height: 14px;
+      background: #2c3e50;
+      border-radius: 50%;
+      animation: piscar 4s infinite;
+    }
+    .olho.esquerdo { left: 25px; }
+    .olho.direito { right: 25px; }
+
+    /* Brilho do olho */
+    .olho::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+    }
+
+    /* Bochecha Laranja */
+    .bochecha-laranja {
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      background: #FF6B35;
+      border-radius: 50%;
+    }
+
+    /* Bico */
+    .bico {
+      position: absolute;
+      top: 50px;
+      left: 45px;
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 18px solid #b2bec3;
+    }
+
+    /* Corpo Cinza */
+    .corpo {
+      position: absolute;
+      top: 100px;
+      left: 50px;
+      width: 100px;
+      height: 130px;
+      background: #7f8c8d;
+      border-radius: 50% 50% 30% 30%;
+      z-index: 1;
+    }
+
+    /* Asas */
+    .asa {
+      position: absolute;
+      top: 15px;
+      width: 25px;
+      height: 80px;
+      background: #95a5a6;
+      border-radius: 50% 50% 30% 30%;
+    }
+    .asa.esquerda { left: -15px; transform: rotate(10deg); }
+    .asa.direita { right: -15px; transform: rotate(-10deg); }
+
+    /* ANIMAÇÕES INTERATIVAS (HOVER) */
+    
+    /* Quando passa o mouse, a crista levanta! */
+    .calopsita:hover .crista {
+      transform: rotate(-5deg) scaleY(1.2);
+    }
+
+    /* Animação natural de piscar os olhos */
+    @keyframes piscar {
+      0%, 90%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Estrutura do Desenho -->
+  <div class="calopsita">
+    <div class="crista"></div>
+    <div class="cabeca">
+      <div class="olho esquerdo"></div>
+      <div class="olho direito"></div>
+      <div class="bico"></div>
+      <div class="bochecha-laranja"></div>
+    </div>
+    <div class="corpo">
+      <div class="asa esquerda"></div>
+      <div class="asa direita"></div>
+    </div>
+  </div>
+
+</body>
+</html>

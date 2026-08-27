@@ -1,0 +1,102 @@
+<div class="card-calopsita">
+  <div class="foto-calopsita">
+    <!-- Círculos das bochechas laranjas clássicas -->
+    <div class="bochecha"></div>
+  </div>
+  <div class="conteudo">
+    <span class="tag">Psitacídeo</span>
+    <h2>Calopsita</h2>
+    <p>Aves amigáveis, inteligentes e famosas por sua crista expressiva e bochechas vermelhas/laranjas.</p>
+    <a href="#" class="botao-saber-mais">Ver Cuidados</a>
+  </div>
+</div>
+/* Paleta de cores inspirada na calopsita */
+:root {
+  --amarelo-calopsita: #FFDE4D;
+  --cinza-pena: #4A4A4A;
+  --cinza-claro: #F5F5F7;
+  --laranja-bochecha: #FF6B35;
+}
+
+/* Card Principal */
+.card-calopsita {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 300px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card-calopsita:hover {
+  transform: translateY(-5px);
+}
+
+/* Área da "Foto" (Simulação do topo amarelo com bochecha) */
+.foto-calopsita {
+  height: 150px;
+  background-color: var(--amarelo-calopsita);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 15px;
+}
+
+/* Detalhe da bochecha laranja charmosa no canto */
+.bochecha {
+  width: 45px;
+  height: 45px;
+  background-color: var(--laranja-bochecha);
+  border-radius: 50%;
+  opacity: 0.85;
+  box-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+}
+
+/* Bloco de Texto */
+.conteudo {
+  padding: 25px;
+}
+
+.tag {
+  background-color: var(--cinza-claro);
+  color: var(--cinza-pena);
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.conteudo h2 {
+  color: var(--cinza-pena);
+  margin: 15px 0 10px 0;
+  font-size: 1.5rem;
+}
+
+.conteudo p {
+  color: #777;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Botão de Ação */
+.botao-saber-mais {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: var(--cinza-pena);
+  color: white;
+  padding: 12px 0;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background 0.2s ease;
+}
+
+.botao-saber-mais:hover {
+  background-color: var(--amarelo-calopsita);
+  color: var(--cinza-pena);
+}
